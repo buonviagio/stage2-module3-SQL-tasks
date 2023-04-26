@@ -1,0 +1,12 @@
+ALTER TABLE student MODIFY COLUMN bithday date NOT NULL;
+
+ALTER TABLE mark ADD CONSTRAINT student_id CHECK (student_id>=1 AND student_id<=10);
+ALTER TABLE mark MODIFY COLUMN subject_id BIGINT NOT NULL;
+
+ALTER TABLE subject ADD CONSTRAINT grade CHECK (grade>=1 AND grade<=15);
+
+ALTER TABLE paymentType ADD UNIQUE (name);
+
+ALTER TABLE payment MODIFY COLUMN amount DECIMAL NOT NULL;
+ALTER TABLE payment MODIFY COLUMN payment_date DATETIME NOT NULL;
+ALTER TABLE payment MODIFY COLUMN type_id BIGINT NOT NULL;
