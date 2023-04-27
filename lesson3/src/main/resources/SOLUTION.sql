@@ -1,4 +1,4 @@
-ALTER TABLE student MODIFY COLUMN bithday date NOT NULL;
+ALTER TABLE student MODIFY COLUMN birthday date NOT NULL;
 
 ALTER TABLE mark ADD CONSTRAINT student_id CHECK (student_id>=1 AND student_id<=10);
 ALTER TABLE mark MODIFY COLUMN subject_id BIGINT NOT NULL;
