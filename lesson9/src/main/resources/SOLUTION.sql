@@ -1,2 +1,3 @@
 SELECT r.name, AVG(r.mark) as average_mark  FROM (SELECT s.name, m.mark FROM student AS s JOIN mark AS m ON s.id = m.student_id) AS r GROUP BY name HAVING average_mark > 8;
 SELECT r.id, r.name, AVG(r.mark) as average_mark  FROM (SELECT s.id, s.name, m.mark FROM student AS s JOIN mark AS m ON s.id = m.student_id) AS r GROUP BY id, name HAVING average_mark > 7;
+SELECT r.id, r.name, COUNT(*) AS paidtwotimes FROM (SELECT s.id, s.name, p.payment_date FROM student AS s JOIN payment AS p WHERE s.id = p.student_id AND YEAR(p.payment_date) = 2019) AS r GROUP BY r.id, r.name HAVING paidtwotimes > 2;
